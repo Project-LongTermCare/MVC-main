@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\js\**" />
+    <Content Remove="wwwroot\js\**" />
+    <EmbeddedResource Remove="wwwroot\js\**" />
+    <None Remove="wwwroot\js\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Controllers\AboutUs\" />
     <Folder Include="Controllers\Medicine\" />
     <Folder Include="Controllers\Introduction\" />
@@ -17,7 +24,6 @@
     <Folder Include="Views\Medicine\" />
     <Folder Include="Views\Member\" />
     <Folder Include="Views\ServiceItem\" />
-    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
 </Project>
