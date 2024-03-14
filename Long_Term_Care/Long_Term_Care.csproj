@@ -7,14 +7,34 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\AboutUs\" />
-    <Folder Include="Controllers\Medicine\" />
-    <Folder Include="Controllers\Introduction\" />
-    <Folder Include="Controllers\Member\" />
+    <Compile Remove="Controllers\AboutUs\**" />
+    <Compile Remove="Controllers\Introduction\**" />
+    <Compile Remove="Controllers\Medicine\**" />
+    <Compile Remove="Controllers\Member\**" />
+    <Compile Remove="Views\Introduction\**" />
+    <Compile Remove="Views\Medicine\**" />
+    <Content Remove="Controllers\AboutUs\**" />
+    <Content Remove="Controllers\Introduction\**" />
+    <Content Remove="Controllers\Medicine\**" />
+    <Content Remove="Controllers\Member\**" />
+    <Content Remove="Views\Introduction\**" />
+    <Content Remove="Views\Medicine\**" />
+    <EmbeddedResource Remove="Controllers\AboutUs\**" />
+    <EmbeddedResource Remove="Controllers\Introduction\**" />
+    <EmbeddedResource Remove="Controllers\Medicine\**" />
+    <EmbeddedResource Remove="Controllers\Member\**" />
+    <EmbeddedResource Remove="Views\Introduction\**" />
+    <EmbeddedResource Remove="Views\Medicine\**" />
+    <None Remove="Controllers\AboutUs\**" />
+    <None Remove="Controllers\Introduction\**" />
+    <None Remove="Controllers\Medicine\**" />
+    <None Remove="Controllers\Member\**" />
+    <None Remove="Views\Introduction\**" />
+    <None Remove="Views\Medicine\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Controllers\ServiceItem\" />
-    <Folder Include="Views\AboutUs\" />
-    <Folder Include="Views\Introduction\" />
-    <Folder Include="Views\Medicine\" />
     <Folder Include="Views\Member\" />
     <Folder Include="Views\ServiceItem\" />
     <Folder Include="wwwroot\js\" />
