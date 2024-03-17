@@ -6,7 +6,11 @@ namespace Long_Term_Care.Controllers
 {
 	public class HealthController : Controller
 	{
-		public IActionResult health_supplement()
+		public IActionResult health_recommend()
+		{
+			return View();
+		}
+		public IActionResult health_items()
 		{
 			return View();
 		}
