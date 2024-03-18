@@ -85,6 +85,12 @@ footer {
     bottom: 0;
 }
 
+/* 頁尾li標題 */
+.footer_title {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.5);
+}
+
 /* 頁尾li字體 */
 ._fontcolor {
     color: #DDABA0;
@@ -197,7 +203,12 @@ footer {
         top: 0;
         width: 100%;
     }
-}
+
+    /* navbar服務項目 */
+    .service_item {
+        margin-right: 20px;
+    }
+}   
 
 /* 當螢幕寬度介於992與767區間時套用以下效果(平版、手機) */
 @media (min-width: 767px) and (max-width: 991.98px) {
