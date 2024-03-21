@@ -9,6 +9,8 @@
 	<meta name="author" content="以軒、崎瑄、昱廷、文龍、彥宏、敬庭">
 	<title>馨安居家照護 | 安心 | 專業 | 老人長期照顧服務</title>
 
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="~/css/Layout/img/favicon.ico.ico" />
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<!-- Top Bar Icon -->
@@ -105,8 +107,9 @@
 							</b>
 						</a>
 						<ul class="dropdown-menu dropdown_style" aria-labelledby="supplementsDropdown">
-							<li><a class="dropdown-item" href="#">保健品知識</a></li>
-							<li><a class="dropdown-item" href="#">我該吃什麼？</a></li>
+							<li><a class="dropdown-item" asp-area="" asp-controller="Health" asp-action="health_info">保健知識</a></li>
+							<li><a class="dropdown-item" asp-area="" asp-controller="Health" asp-action="health_items">保健品總覽</a></li>
+							<li><a class="dropdown-item" asp-area="" asp-controller="Health" asp-action="health_recommend">我適合吃什麼？</a></li>
 						</ul>
 					</li>
 					@* <li class="nav-item list_position">
