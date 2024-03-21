@@ -37,6 +37,7 @@
     <Folder Include="Controllers\ServiceItem\" />
     <Folder Include="Views\Member\" />
     <Folder Include="Views\ServiceItem\" />
+    <Folder Include="wwwroot\css\health_items\img\" />
     <Folder Include="wwwroot\js\" />
   </ItemGroup>
 

@@ -10,10 +10,30 @@ namespace Long_Term_Care.Controllers
 		{
 			return View();
 		}
-		public IActionResult health_items()
+		
+		public IActionResult health_form()
 		{
 			return View();
 		}
+		public IActionResult health_items()
+		{
+			return View(health_items_texts);
+		}
+		List<health_items_text> health_items_texts = new List<health_items_text>
+		{
+			new health_items_text{items_Id=1, items_img="health_item_1.png", items_title="原力維生素C+鋅粉",
+				items_context="●增強體力、健康發育，調整體質、滋補強身\r\n●符合每日所需攝取量\r\n●採用國際知名維生素原料大廠 Quali-C\r\n●維生素C：鋅 = 10：1 比例，讓您輕鬆補充必需營養素，享受健康生活的原力\"\r\n",
+				items_link="https://www.yohopower.tw/products/bpower-2"},
+			new health_items_text{items_Id=2, items_img="health_item_2.png", items_title="綜合維生素B群 緩釋膜衣錠",
+				items_context="●增強體力、健康發育，調整體質、滋補強身\r\n●符合每日所需攝取量\r\n",
+				items_link="https://www.yohopower.tw/products/bpower-2"},
+			new health_items_text{items_Id=3, items_img="health_item_3.png", items_title="悠活好代謝 苦瓜胜肽",
+				items_context="●增強體力、健康發育，調整體質、滋補強身\r\n●符合每日所需攝取量\r\n",
+				items_link="https://www.yohopower.tw/products/bpower-2"},
+			new health_items_text{items_Id=4, items_img="health_item_4.png", items_title="原力維生素D3",
+				items_context="●增強體力、健康發育，調整體質、滋補強身\r\n●符合每日所需攝取量\r\n",
+				items_link="https://www.yohopower.tw/products/bpower-2"}
+		};
 		public IActionResult health_info()
 		{
 			return View(health_info_texts);
