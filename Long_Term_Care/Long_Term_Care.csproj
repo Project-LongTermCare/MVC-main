@@ -34,6 +34,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Health\health_form_2.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Controllers\ServiceItem\" />
     <Folder Include="Views\Member\" />
     <Folder Include="Views\ServiceItem\" />
