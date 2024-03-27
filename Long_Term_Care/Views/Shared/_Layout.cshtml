@@ -20,6 +20,8 @@
 	<!-- Icon CDN -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	<link rel="stylesheet" href="~/css/Layout/css/Layout.css" asp-append-version="true">
+	<!-- Robot -->
+	<script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
 </head>
 <body>
 	<!-- topbar -->
@@ -113,12 +115,12 @@
 						</ul>
 					</li>
 					@* <li class="nav-item list_position">
-						<a class="nav-link link_item" href="#">聯繫我們</a>
+					<a class="nav-link link_item" href="#">聯繫我們</a>
 					</li> *@
 					<li class="mobile_inline list_position">
 						<a href="#!" class="nav-link mobile_inline">
 							@* <img src="~/css/Layout/img/login_icon32x32.png"
-								 alt="Login"> *@
+							alt="Login"> *@
 							<i class="fa-solid fa-circle-user fa-2xl"></i>
 						</a>&nbsp;
 					</li>
@@ -127,16 +129,19 @@
 		</div>
 	</nav>
 	<div>
-			@RenderBody()
+		@RenderBody()
 
 
-			
 
 
-			<button type="button" class="btn btn-gotop d-inline-flex align-items-center justify-content-center"
-					data-action="gotop">
-				<i class="fa fa-chevron-up"></i>
-			</button>
+
+		<button type="button" class="btn btn-gotop d-inline-flex align-items-center justify-content-center"
+				data-action="gotop">
+			<i class="fa fa-chevron-up"></i>
+		</button>
+
+		<div class="row_robot" id="webchat" role="main"></div>
+		<button class="open_button" onclick="openBot()"><i class="fa-solid fa-robot"></i></button>
 	</div>
 
 
