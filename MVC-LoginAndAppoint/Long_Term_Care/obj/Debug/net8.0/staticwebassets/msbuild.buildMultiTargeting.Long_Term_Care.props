@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Long_Term_Care.props" />
+</Project>

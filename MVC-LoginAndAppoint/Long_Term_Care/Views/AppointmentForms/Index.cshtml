@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Long_Term_Care.Models.AppointmentForm>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReserveTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CaseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CaseAvatar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Case)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Member)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Service)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReserveTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaseAvatar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Case.CaseId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.EmployeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Member.MemberId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Service.ServiceId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ReserveId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ReserveId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ReserveId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

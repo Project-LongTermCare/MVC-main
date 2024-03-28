@@ -1,0 +1,101 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<link rel="stylesheet" href="/css/SignUp/SignUp.css">
+<form class="row g-3 modal_content_sign" onsubmit="return checkinput()">
+    <h1>會員註冊</h1>
+    <hr>
+    <div class="col-md-4">
+        <label for="sign_fullname" class="form-label"><b>*姓名</b></label>
+        <input type="text" name="sign_fullname" class="form-control" id="sign_fullname" value="王小名" required>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <label for="sign_gender" class="form-label"><b>*性別：</b></label>
+        <select class="form-select" id="sign_gender" required>
+            <option selected disabled value="">下拉選擇生理性別</option>
+            <option value="0">男</option>
+            <option value="1">女</option>
+        </select>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-md-6">
+        <label for="sign_username " class="form-label"><b>*登入帳號：</b></label>
+        <input type="text" name="sign_username" class="form-control" id="sign_username " required>
+        <p>帳號只能是8-12英文、數字混合字元，其餘字元均不接受</p>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-md-6">
+        <label for="sign_pass11 " class="form-label"><b>*登入密碼：</b></label>
+        <input type="password" name="sign_pass11" class="form-control" id="sign_pass11 " required>
+        <p>至少 5 個位數以上的密碼長度</p>
+    </div>
+    <div class="col-md-6">
+        <label for="sign_pass12 " class="form-label"><b>*確認密碼：</b></label>
+        <input type="password" name="sign_pass12" class="form-control" id="sign_pass12 " required>
+        <p>再輸入一次密碼，確認沒有打錯字</p>
+    </div>
+    <div class="col-md-6">
+        <label for="sign_email" class="form-label"><b>*Email</b></label>
+        <input type="text" class="form-control" id="sign_email" required>
+        <p>請填寫Email。<br>（Yahoo、PChome等免費信箱較容易被阻擋，為保障您的權益，請避免使用）</p>
+    </div>
+    <div class="col-md-6">
+        <label for="sign_mobile" class="form-label"><b>*電話：</b></label>
+        <input type="text" class="form-control" id="sign_mobile" required>
+        <p>請填寫手機號碼，台灣以外地區，請填寫當地通訊電話</p>
+    </div>
+    <div class="col-12">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" checked="checked" id="sign_getnews" required>
+            <label class="form-check-label" for="sign_getnews">
+                我願意接收最新優惠消息及服務推廣資訊
+            </label>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="sign_privacy" required>
+            <label class="form-check-label" for="sign_privacy">
+                我同意 <a href="#" style="color:dodgerblue">網站服務條款及隱私權政策</a>.
+            </label>
+        </div>
+    </div>
+    <div class="col-12 signbtn">
+        <!-- 要加入超連結轉跳 -->
+        <button class="btn btn-success signup_btn" type="submit">註冊</button>
+        <button class="btn btn-danger cancel_btn" type="submit">取消</button>
+    </div>
+</form>
+
+<script>
+    // 正規表達式驗證
+    function checkinput() {
+        // 檢查登入帳號是否有特殊字元
+        var regex = /[^a-zA-Z0-9]/;
+        var okname = regex.exec(document.getElementById("sign_username").value);
+        if (!okname) {
+            window.alert("只允許英文、數字");
+            document.getElementById("sign_username").focus();
+            return false;
+        }
+
+        // 開始檢查密碼長度是否正確？
+        var pw1 = document.getElementById("sign_pass11");
+        if (pw1.value.length < 5) {
+            window.alert("密碼長度必須要大於 5 個字元以上");
+            document.getElementById("sign_pass11").focus();
+            return false;
+        }
+
+        // 看看兩次密碼是否相同？
+        var pw2 = document.getElementById("sign_pass12");
+        if (pw1.value != pw2.value) {
+            window.alert("兩次密碼並不相同！");
+            document.getElementById("sign_pass11").focus();
+            return false;
+        }
+    }
+<script/>
