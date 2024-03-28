@@ -6,6 +6,18 @@ body {
     padding: 0;
 }
 
+.wrapper {
+    min-height: 100%;
+    /*外層高度100%*/
+    margin-bottom: 0px;
+    /*隨footer高度需做調整*/
+}
+
+.content {
+    padding-bottom: 50px;
+    /*避免文字超出瀏覽器時，內容區塊不會和footer打架*/
+}
+
 a,
 a:hover {
     text-decoration: none !important;
@@ -33,7 +45,7 @@ body {
 ._navsite {
     background: #FAF8F3 !important;
     padding: 0;
-    z-index: 1000;
+    z-index: 1050;
 }
 
 /* 標題 */
@@ -43,6 +55,10 @@ body {
     font-weight: 900;
     margin-left: -25%;
 }
+
+/* .logo_title {
+    padding: 0;
+} */
 
 /* 頁首的選單 */
 .list_font ul>li {
@@ -74,8 +90,7 @@ body {
     transition: 0.3s ease;
 }
 
-.dropdown-item:hover,
-.link_item {
+.dropdown-item:hover {
     font-weight: bold;
 }
 
@@ -95,7 +110,7 @@ footer {
 }
 
 /* 頁尾<p> */
-.service_time, .org_intro {
+p {
     color: #b3b3b3;
     font-weight: 300;
 }
@@ -176,7 +191,6 @@ footer {
         position: fixed;
         top: 0;
         width: 100%;
-
     }
 }
 
@@ -210,3 +224,4 @@ footer {
         margin-top: -35px;
     }
 }
+.

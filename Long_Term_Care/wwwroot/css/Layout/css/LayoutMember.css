@@ -1,0 +1,234 @@
+html,
+body {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    min-height: 100%;
+    /*外層高度100%*/
+    margin-bottom: 0px;
+    /*隨footer高度需做調整*/
+}
+
+.content {
+    padding-bottom: 50px;
+    /*避免文字超出瀏覽器時，內容區塊不會和footer打架*/
+}
+
+a,
+a:hover {
+    text-decoration: none !important;
+    -webkit-transition: .2s all ease;
+    -o-transition: .2s all ease;
+    transition: .2s all ease;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+/* 頂端bar */
+
+.top_bar {
+    padding: .5rem 0;
+    background: #eee;
+}
+
+.top_bar a {
+    color: #666666;
+}
+
+/* 導覽列 */
+._navsite {
+    background: #FAF8F3 !important;
+    padding: 0;
+    z-index: 1000;
+}
+
+/* 標題 */
+._title {
+    color: #DDABA0;
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-left: -25%;
+}
+
+/* .logo_title {
+    padding: 0;
+} */
+
+/* 頁首的選單 */
+.list_font ul>li {
+    font-size: 1.2rem;
+    /* letter-spacing: 1px; */
+}
+
+/* 頁首的欄位排版 */
+.list_position {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+}
+
+/* 下拉選單的樣式 */
+.dropdown_style {
+    border: none;
+    border-top: 2px solid #DDABA0;
+    background-color: white;
+    border-radius: 0;
+    text-align: left;
+    -webkit-box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+    padding: 0px 0;
+    margin-top: 10px;
+    margin-left: 0px;
+    -webkit-transition: 0.3s 0s;
+    -o-transition: 0.3s 0s;
+    transition: 0.3s ease;
+}
+
+.dropdown-item:hover {
+    font-weight: bold;
+}
+
+/* 頁尾 */
+footer {
+    background-color: #FAF8F3;
+    bottom: 0;
+}
+
+/* 頁尾li字體 */
+._fontcolor {
+    color: #DDABA0;
+}
+
+._fontcolor:hover {
+    color: #084d97;
+}
+
+/* 頁尾<p> */
+p {
+    color: #b3b3b3;
+    font-weight: 300;
+}
+
+/* 手機瀏覽模式的BUTTON */
+.btn_style {
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.btn_style:focus {
+    outline: 0 !important;
+}
+
+.icon_style {
+    color: #DDABA0 !important;
+}
+
+/* 回到頂部的button */
+.btn-gotop {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 60px;
+    right: 30px;
+    border: none #dddddd;
+    border-radius: 50%;
+    color: #dddddd;
+    background-color: transparent;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    &.show {
+        opacity: .5;
+    }
+
+    i {
+        font-size: 24px;
+    }
+
+    &:hover {
+        border: 1.5px solid steelblue;
+        background-color: steelblue;
+    }
+}
+
+/* 當螢幕寬度大於992時套用這格式 */
+@media (min-width: 992px) {
+    .navbar-nav .nav-item:hover .dropdown-menu {
+        display: block;
+    }
+
+    /* top-bar的信箱位置 */
+    .top_mail_icon {
+        margin-left: 2rem;
+    }
+
+    /* 導覽列高度 */
+    ._navsite {
+        height: 13%;
+    }
+
+    /* 禁止使用者點擊，防止跑版 */
+    .nav-item.dropdown>.nav-link.dropdown-toggle {
+        pointer-events: none;
+        /* 禁用點擊事件 */
+        cursor: default;
+    }
+
+    /* 下拉選單寬度 */
+    .dropdown_style {
+        width: 200px;
+    }
+
+    /* JS滾動時監聽navbar */
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+}
+
+/* 當螢幕寬度小於992時套用以下效果(平版、手機) */
+@media (max-width: 991.98px) {
+
+    /* ._title {
+        margin-left: -35%;
+    } */
+    .navbar-nav,
+    .dropdown-item {
+        text-align: center;
+        /* 這裡將選單標題與內容置中 */
+    }
+
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+}
+
+/* 當螢幕寬度介於992與767區間時套用以下效果(平版、手機) */
+@media (min-width: 767px) and (max-width: 991.98px) {
+    ._title {
+        margin-left: -100%;
+        /* 在螢幕寬度介於 767px 和 992px 之間時，將margin-left設置為-50% */
+    }
+
+    .mobile_list_height {
+        margin-top: -35px;
+    }
+}
+.nav-pills .nav-link.active,
+.nav-pills .nav-link.active:hover,
+.nav-pills .nav-link.active:focus {
+    background-color: rgb(219, 217, 217);
+    color: black;
+    font-weight: 550;
+    max-width: 100%;
+}
