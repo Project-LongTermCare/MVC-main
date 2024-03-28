@@ -1,0 +1,92 @@
+﻿@model Long_Term_Care.Models.Case
+@{
+}
+<link rel="stylesheet" href="/css/SignUp/SignUp.css" asp-append-version="true">
+<form class="row g-3 modal_content_sign w-100" asp-action="EditCase"  enctype="multipart/form-data">
+    <h1>個案編輯</h1>
+    <hr />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="CaseId" />
+    <hr />
+    <div class="col-md-6">
+        <label class="control-label"><b>*姓名：</b></label>
+        <input asp-for="CaseName" class="form-control" />
+
+        <span asp-validation-for="CaseName" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="control-label"><b>*性別：</b></label>
+        <div class="form-check form-check-inline">
+            <input asp-for="Gender" class="form-check-input" type="radio" id="inlineCheckbox3" name="Gender" value="男性">
+            <label class="form-check-label" for="inlineCheckbox3">男性</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input asp-for="Gender" class="form-check-input" type="radio" id="inlineCheckbox4" name="Gender" value="女性">
+            <label class="form-check-label" for="inlineCheckbox4">女性</label>
+        </div>
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="control-label"><b>*生日：</b></label>
+        <input asp-for="Birthdate" class="form-control" />
+        <span asp-validation-for="Birthdate" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="control-label"><b>*年齡：</b></label>
+        <input asp-for="Age" class="form-control" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="control-label"><b>*身分證：</b></label>
+        <input asp-for="IdentificationNumber" class="form-control" />
+        <span asp-validation-for="IdentificationNumber" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="control-label"><b>*身分別：</b></label>
+        <input asp-for="IdentityType" class="form-control" />
+        <span asp-validation-for="IdentityType" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="control-label"><b>*手機號碼：</b></label>
+        <input asp-for="CasePhone" class="form-control" />
+        <span asp-validation-for="CasePhone" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="control-label"><b>*市話：</b></label>
+        <input asp-for="FamilyPhone" class="form-control" />
+        <span asp-validation-for="FamilyPhone" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="control-label"><b>*負責家屬：</b></label>
+        <input asp-for="FamilyName" class="form-control" />
+        <span asp-validation-for="FamilyName" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="control-label"><b>*城市：</b></label>
+        <input asp-for="City" class="form-control" />
+        <span asp-validation-for="City" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="control-label"><b>*地區：</b></label>
+        <input asp-for="District" class="form-control" />
+        <span asp-validation-for="District" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="control-label"><b>*地址：</b></label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="control-label"><b>*關係：</b></label>
+        <input asp-for="Relation" class="form-control" />
+        <span asp-validation-for="Relation" class="text-danger"></span>
+    </div>
+    <div class="col-md-6"></div>
+    <select asp-for="MemberId" name="MemberId" class="form-control" asp-items="ViewBag.MemberId"></select>  <br />
+    <span asp-validation-for="MemberId" class="text-danger"></span>
+    <div class="col-12 signbtn">
+        <!-- 要加入超連結轉跳 -->
+        <button class="btn btn-success signup_btn" type="submit">確認</button>
+        <button class="btn btn-danger cancel_btn xdd1" role="button" type="button"  asp-action="Edit" asp-route-id="@Model?.MemberId" >取消</button>
+    </div>
+</form>
