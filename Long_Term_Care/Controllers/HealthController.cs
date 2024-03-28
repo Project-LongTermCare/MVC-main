@@ -1,53 +1,68 @@
-﻿using Long_Term_Care.Models;
+﻿using Long_Term_Care.Models.health;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Text.Json;
+using System.Text;
+using Newtonsoft.Json;
+
+
 namespace Long_Term_Care.Controllers
+
 {
 	public class HealthController : Controller
 	{
+		//推薦入口
 		public IActionResult health_recommend()
 		{
 			return View();
 		}
-		
+		//推薦表單   // GET 方法用於顯示表單
 		public IActionResult health_form()
 		{
 			return View();
 		}
-		public IActionResult health_items()
+		[HttpPost] // POST 方法用於處理提交的表單數據
+		public IActionResult HealthAnswer()
 		{
-			return View(health_items_texts);
+			return View("health_answer");
 		}
-		List<health_items_text> health_items_texts = new List<health_items_text>
+
+		//保健品總覽
+		public IActionResult Health_items()
 		{
-			new health_items_text{items_Id=1, items_img="health_item_1.png", items_title="原力維生素C+鋅粉",
-				items_context="●增強體力、健康發育，調整體質、滋補強身\r\n●符合每日所需攝取量\r\n●採用國際知名維生素原料大廠 Quali-C\r\n●維生素C：鋅 = 10：1 比例，讓您輕鬆補充必需營養素，享受健康生活的原力\"\r\n",
-				items_link="https://www.yohopower.tw/products/bpower-2"},
-			new health_items_text{items_Id=2, items_img="health_item_2.png", items_title="綜合維生素B群 緩釋膜衣錠",
-				items_context="●增強體力、健康發育，調整體質、滋補強身\r\n●符合每日所需攝取量\r\n",
-				items_link="https://www.yohopower.tw/products/bpower-2"},
-			new health_items_text{items_Id=3, items_img="health_item_3.png", items_title="悠活好代謝 苦瓜胜肽",
-				items_context="●增強體力、健康發育，調整體質、滋補強身\r\n●符合每日所需攝取量\r\n",
-				items_link="https://www.yohopower.tw/products/bpower-2"},
-			new health_items_text{items_Id=4, items_img="health_item_4.png", items_title="原力維生素D3",
-				items_context="●增強體力、健康發育，調整體質、滋補強身\r\n●符合每日所需攝取量\r\n",
-				items_link="https://www.yohopower.tw/products/bpower-2"}
+
+            return View(health_items_texts);
+		}
+		List<Health_items_text> health_items_texts = new List<Health_items_text>
+		{
+			new Health_items_text{Items_Id=1, Items_img="health_item_1.png", Items_title="原力維生素C+鋅粉",
+                Items_context="●增強體力、健康發育，調整體質、滋補強身\r\n●符合每日所需攝取量\r\n●採用國際知名維生素原料大廠 Quali-C\r\n●維生素C：鋅 = 10：1 比例，讓您輕鬆補充必需營養素，享受健康生活的原力\"\r\n",
+				Items_link="https://www.yohopower.tw/products/bpower-2"},
+			new Health_items_text{Items_Id=2, Items_img="health_item_2.png", Items_title="綜合維生素B群 緩釋膜衣錠",
+                Items_context="●增強體力、健康發育，調整體質、滋補強身\r\n●符合每日所需攝取量\r\n",
+                Items_link="https://www.yohopower.tw/products/bpower-2"},
+			new Health_items_text{Items_Id=3, Items_img="health_item_3.png", Items_title="悠活好代謝 苦瓜胜肽",
+                Items_context="●增強體力、健康發育，調整體質、滋補強身\r\n●符合每日所需攝取量\r\n",
+                Items_link="https://www.yohopower.tw/products/bpower-2"},
+			new Health_items_text{Items_Id=4, Items_img="health_item_4.png", Items_title="原力維生素D3",
+                Items_context="●增強體力、健康發育，調整體質、滋補強身\r\n●符合每日所需攝取量\r\n",
+                Items_link="https://www.yohopower.tw/products/bpower-2"}
 		};
-		public IActionResult health_info()
+		public IActionResult Health_info()
 		{
 			return View(health_info_texts);
 		}
-		List<health_info_text> health_info_texts = new List<health_info_text>
+		List<Health_info_text> health_info_texts = new List<Health_info_text>
 		{
-			new health_info_text{info_Id=1, info_img="health_info_1.jpg", info_title="老年人飲食：解決四大挑戰，享受美味健康！",
-				info_context="\n如果:假牙摩擦影響咀嚼功能?\n建議您:選擇質地較柔軟、易於咀嚼和吞嚥的食物。\n" +
+			new Health_info_text{Info_Id=1, Info_img="health_info_1.jpg", Info_title="老年人飲食：解決四大挑戰，享受美味健康！",
+				Info_context="\n如果:假牙摩擦影響咀嚼功能?\n建議您:選擇質地較柔軟、易於咀嚼和吞嚥的食物。\n" +
 				"如果:唾液分泌不足影響消化功能?\n建議您:在烹飪時適時添加水分，或使用水煮或蒸煮的烹調方式。\n" +
 				"如果:味覺及嗅覺衰退影響食慾?\n建議您:建議減少鹽和醬油的使用，並適量使用香料以增加食物的風味。\n" +
 				"如果:消化液分泌減少影響消化功能?\n建議您:建議補充酵素和益生菌的營養補充品，以促進消化和吸收。" },
 
-			new health_info_text{info_Id=2, info_img="health_info_3.jpg", info_title="老年人營養攝取指南：保持活力，關鍵營養一覽(上)",
-				info_context="\n1. 蛋白質\n許多銀髮族擔心影響身體而不敢攝取肉類，但身體最主要的架構就是蛋白質。" +
+			new Health_info_text{Info_Id=2, Info_img="health_info_3.jpg", Info_title="老年人營養攝取指南：保持活力，關鍵營養一覽(上)",
+				Info_context="\n1. 蛋白質\n許多銀髮族擔心影響身體而不敢攝取肉類，但身體最主要的架構就是蛋白質。" +
 				"\n不能忽略優質蛋白質的攝取，" +
 				"\n例如：魚肉、雞蛋、雞肉、牛肉、豬肉、黃豆製品、乳品類等。" +
 				"\n搭配充足日曬與規律運動，才能維持健康活力。" +
@@ -60,8 +75,8 @@ namespace Long_Term_Care.Controllers
 				"\n與鈣質相同，維生素D可幫助骨骼與牙齒的生長發育之外，" +
 				"\n還能幫增進鈣質吸收。建議要多多出門活動，適度的曬太陽使身體產生維生素D。" },
 
-			new health_info_text{info_Id=3, info_img="health_info_3.jpg", info_title="老年人營養攝取指南：保持活力，關鍵營養一覽(下)",
-				info_context="\n4. 葉酸" +
+			new Health_info_text{Info_Id=3, Info_img="health_info_3.jpg", Info_title="老年人營養攝取指南：保持活力，關鍵營養一覽(下)",
+				Info_context="\n4. 葉酸" +
 				"\n2005～2008 年營養調查結果，顯示老人葉酸不足率（血清濃度 <6 ng/mL）。" +
 				"\n尤其是 80 歲以上的男性老人，其葉酸不足率高達 40%。" +
 				"\n葉酸與老年人健康有相關性，\n故建議多攝取含葉酸之食物，例如：蘆筍、花椰菜、蛋黃等。" +
@@ -71,8 +86,8 @@ namespace Long_Term_Care.Controllers
 				"\n6. 益生菌\n除了平常選擇多纖維、植物性食物為基底外，" +
 				"\n也可適量補充益生菌達到幫助維持消化道機能、改變細菌叢生態等等。" },
 
-			new health_info_text{info_Id=4, info_img="health_info_4.jpg", info_title="長者保健美食大揭密：挑選4大營養補充，維護健康生活(上)",
-				info_context="\n1. 鈣保健品" +
+			new Health_info_text{Info_Id=4, Info_img="health_info_4.jpg", Info_title="長者保健美食大揭密：挑選4大營養補充，維護健康生活(上)",
+				Info_context="\n1. 鈣保健品" +
 				"\n鈣是老人必備保健食品，建議挑選時可以注意以下幾點：" +
 				"\n▼天然鈣質來源：" +
 				"\n挑選天然鈣質來源，例如：「骨鈣素」或是「海藻鈣」。才能維持吸收與利用率。" +
@@ -90,8 +105,8 @@ namespace Long_Term_Care.Controllers
 				"\n▼若家中長輩茹素：" +
 				"\n則須考慮市售維生素D3 多為動物來源，需謹慎挑選素食來源維生素D。" },
 
-			new health_info_text{info_Id=5, info_img="health_info_5.jpg", info_title="長者保健美食大揭密：挑選4大營養補充，維護健康生活(下)",
-				info_context="\n3. 維生素B(葉酸)" +
+			new Health_info_text{Info_Id=5, Info_img="health_info_5.jpg", Info_title="長者保健美食大揭密：挑選4大營養補充，維護健康生活(下)",
+				Info_context="\n3. 維生素B(葉酸)" +
 				"\n葉酸不只是孕婦需要的營養素，中老年人也需要葉酸。" +
 				"\n挑選老年人的葉酸保健食品時，可注意以下幾點：" +
 				"\n▼挑選第4代活性葉酸，相較於食物中的葉酸，不需轉換，進入人體就能直接吸收。" +
@@ -103,8 +118,8 @@ namespace Long_Term_Care.Controllers
 				"\n▼根據補充益生菌的目的，可以挑選對應的菌株。維持消化道機能與排便順暢：可以選擇長雙岐桿菌、兩歧雙歧桿菌、乾酪乳桿菌。過敏調節、增加免疫力：可以選擇植物乳桿菌、鼠李糖乳桿菌。" +
 				"\n避免添加酵素的益生菌產品，因為酵素主要的功能是幫助餐後食物分解消化，但酵素與益生菌兩者共存時，反而會影響益生菌的死亡速度，補充效果也大打折扣" },
 
-			new health_info_text{info_Id=6, info_img="health_info_6.jpg", info_title="老人補鈣食品：5大好處，3點推薦一次掌握",
-				info_context="\n5大補鈣益處" +
+			new Health_info_text{Info_Id=6, Info_img="health_info_6.jpg", Info_title="老人補鈣食品：5大好處，3點推薦一次掌握",
+				Info_context="\n5大補鈣益處" +
 				"\n維持骨骼與牙齒的正常發育及健康" +
 				"\n幫助血液正常的凝固功能" +
 				"\n有助於肌肉與心臟的正常收縮及神經的感應性" +
@@ -119,8 +134,8 @@ namespace Long_Term_Care.Controllers
 				"\n3. 添加複方，效果加乘" +
 				"\n挑選有添加維生素K、維生素D3、酪蛋白水解物（CPP）的產品。補鈣還要鎖鈣，添加複方成分的產品才能聰明補鈣。" },
 
-			new health_info_text{info_Id=7, info_img="health_info_7.jpg", info_title="老人補鈣Q&A，補鈣眉角報你知",
-				info_context="\nQ1. 老年人額外補充鈣質，要挑選錠劑、膠囊、還是粉包好呢？" +
+			new Health_info_text{Info_Id=7, Info_img="health_info_7.jpg", Info_title="老人補鈣Q&A，補鈣眉角報你知",
+				Info_context="\nQ1. 老年人額外補充鈣質，要挑選錠劑、膠囊、還是粉包好呢？" +
 				"\n鈣的吸濕性強，因此建議挑選有獨立包裝的產品。市售的鈣質產品大多為錠劑，在開開關關的情況下，就容易受潮，可以選擇獨立包裝的粉包，一次一包衛生安全。粉包也不用擔心膠囊、錠劑過大的困擾，更方便老年人食用。" +
 				"\nQ2. 什麼時間點吃鈣最好？一次要吃多少量呢？" +
 				"\n無論飯前及飯後食用皆可。那什麼時間點吃鈣最好呢？營養師建議『睡前吃最好』！睡前補充鈣質可以幫助入睡，另外也可以減少鈣質與其他食物（例如鐵、磷）的交互作用影響吸收率喔。" +

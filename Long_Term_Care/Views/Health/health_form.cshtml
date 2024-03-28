@@ -4,13 +4,14 @@
 <link rel="stylesheet" href="/css/health_recommend/health_form/health_form.css">
 
 <div id="form" class="fb-theme-default container">
-	<form id="fb_form78" action="" method="post" autocomplete="on">
+	<form id="healthForm" asp-controller="Health" asp-action="HealthAnswer" method="POST" autocomplete="on">
 		<section class="text-center">
 			<h1>綜合健康評估</h1>
 			<h3 class="mt-1">完成評估需時約3分鐘</h3>
 			<h3 class="mt-1">針對問卷裡您所提供的所有資訊  都只會針對網站內部分析使用</h3>
 			<button id="startButton" class="btn btn-outline-success">本人  同意馨安的私隱政策及 同意使用條款 並開始評估</button>
 			<a class="btn btn-outline-danger m-4" role="button" asp-area="" asp-controller="Health" asp-action="health_recommend">本人不同意</a>
+			<h3 class="mt-1">每題請務必勾選!</h3>
 		</section>
 		<div id="question" style="display:none;">
 			<!-- 個人資料 -->
@@ -107,25 +108,30 @@
 			</section>
 			<!-- 問卷區域-基礎 -->
 			<section>
-				<h2>每題請務必勾選!</h2>
+				<h2>生活習慣</h2>
 				<!-- 水果 -->
 				<div class="form-field form-radio required">
 					<div class="input-wrapper with-icon">
 						<fieldset class="p-3">
 							<legend>
-								<i class="fas fa-heart" aria-hidden="true"></i>您每星期平均進食7份以上的水果？<abbr class="required" title="required">*</abbr>
+								<i class="fas fa-heart" aria-hidden="true"></i>您每星期平均進食幾份水果？<abbr class="required" title="required">*</abbr>
 							</legend>
-							<strong>1份水果約1個拳頭大(80克-150克)</strong>
+							<strong>每份水果約1個拳頭大(80克-150克)</strong>
 							<div class="answer mt-3">
 								<div class="radiowrapper">
 									<input type="radio" name="q2" value="1" data-product="產品C"
-										   id="fruit_y">
-									<label for="fruit_y" class="btn btn-outline-success">是</label>
+										   id="fruit_1">
+									<label for="fruit_1" class="btn btn-outline-success">每星期14份以上</label>
 								</div>
 								<div class="radiowrapper">
-									<input type="radio" name="q2" value="50" data-product="產品酵素"
-										   id="fruit_n">
-									<label for="fruit_n" class="btn btn-outline-success">沒有</label>
+									<input type="radio" name="q2" value="30" data-product="產品酵素"
+										   id="fruit_2">
+									<label for="fruit_2" class="btn btn-outline-success">每星期7-14份</label>
+								</div>
+								<div class="radiowrapper">
+									<input type="radio" name="q2" value="70" data-product="產品酵素"
+										   id="fruit_none">
+									<label for="fruit_none" class="btn btn-outline-success">每星期少於7份</label>
 								</div>
 							</div>
 						</fieldset>
@@ -136,19 +142,24 @@
 					<div class="input-wrapper with-icon">
 						<fieldset class="p-3">
 							<legend>
-								<i class="fas fa-heart" aria-hidden="true"></i>您每星期平均進食7份以上的蔬菜？<abbr class="required" title="required">*</abbr>
+								<i class="fas fa-heart" aria-hidden="true"></i>您每星期平均進食幾份蔬菜？<abbr class="required" title="required">*</abbr>
 							</legend>
-							<strong>1份大約是煮熟後半個飯碗的量(120克左右)</strong>
+							<strong>每份約2/3碗烹煮過後把水分瀝乾的蔬菜(120克左右)</strong>
 							<div class="answer mt-3">
 								<div class="radiowrapper">
 									<input type="radio" name="q3" value="1" data-product="產品C"
-										   id="veget_y">
-									<label for="veget_y" class="btn btn-outline-success">是</label>
+										   id="veget_1">
+									<label for="veget_1" class="btn btn-outline-success">每星期14份以上</label>
 								</div>
 								<div class="radiowrapper">
-									<input type="radio" name="q3" value="50" data-product="產品酵素"
-										   id="veget_n">
-									<label for="veget_n" class="btn btn-outline-success">沒有</label>
+									<input type="radio" name="q3" value="30" data-product="產品酵素"
+										   id="veget_2">
+									<label for="veget_2" class="btn btn-outline-success">每星期7-14份</label>
+								</div>
+								<div class="radiowrapper">
+									<input type="radio" name="q3" value="70" data-product="產品酵素"
+										   id="veget_none">
+									<label for="veget_none" class="btn btn-outline-success">每星期少於7份</label>
 								</div>
 							</div>
 						</fieldset>
@@ -183,28 +194,34 @@
 					<div class="input-wrapper with-icon">
 						<fieldset class="p-3">
 							<legend>
-								<i class="fas fa-heart" aria-hidden="true"></i>您每星期平均幾天飲用多少酒精飲品？<abbr class="required" title="required">*</abbr>
+								<i class="fas fa-heart" aria-hidden="true"></i>您的飲酒頻率？<abbr class="required" title="required">*</abbr>
 							</legend>
-							<div class="answer">
+							<strong>每份約1罐啤酒或1杯紅白酒或1shot盃的烈酒</strong>
+							<div class="answer mt-3">
 								<div class="radiowrapper">
-									<input type="radio" name="q5" value="30"
+									<input type="radio" name="q5" value="100"
 										   data-product="產品紅麴" id="wine_1">
-									<label for="wine_1" class="btn btn-outline-success">1-2次</label>
+									<label for="wine_1" class="btn btn-outline-success">每星期15份以上</label>
 								</div>
 								<div class="radiowrapper">
 									<input type="radio" name="q5" value="50"
 										   data-product="產品紅麴" id="wine_2">
-									<label for="wine_2" class="btn btn-outline-success">3-5次</label>
+									<label for="wine_2" class="btn btn-outline-success">每星期9-14份</label>
 								</div>
 								<div class="radiowrapper">
-									<input type="radio" name="q5" value="100"
+									<input type="radio" name="q5" value="30"
 										   data-product="產品紅麴" id="wine_3">
-									<label for="wine_3" class="btn btn-outline-success">6-7次</label>
+									<label for="wine_3" class="btn btn-outline-success">每星期2-8份</label>
+								</div>
+								<div class="radiowrapper">
+									<input type="radio" name="q5" value="10"
+										   data-product="產品紅麴" id="wine_4">
+									<label for="wine_4" class="btn btn-outline-success">每星期0-1份</label>
 								</div>
 								<div class="radiowrapper">
 									<input type="radio" name="q5" value="1"
-										   data-product="產品C" id="wine_4">
-									<label for="wine_4" class="btn btn-outline-success">沒有</label>
+										   data-product="產品C" id="wine_5">
+									<label for="wine_5" class="btn btn-outline-success">沒有飲酒習慣</label>
 								</div>
 							</div>
 						</fieldset>
@@ -215,18 +232,29 @@
 					<div class="input-wrapper with-icon">
 						<fieldset class="p-3">
 							<legend>
-								<i class="fas fa-heart" aria-hidden="true"></i>您有吸煙或長期接觸二手煙嗎？<abbr class="required" title="required">*</abbr>
+								<i class="fas fa-heart" aria-hidden="true"></i>您的抽菸頻率？<abbr class="required" title="required">*</abbr>
 							</legend>
-							<div class="answer">
+							<strong>長期接觸二手菸環境，待8小時約等於每天半包菸</strong>
+							<div class="answer mt-3">
+								<div class="radiowrapper">
+									<input type="radio" name="q6" value="100" data-product="產品B"
+										   id="smoke_1">
+									<label for="smoke_1" class="btn btn-outline-success">每天1包以上</label>
+								</div>
 								<div class="radiowrapper">
 									<input type="radio" name="q6" value="50" data-product="產品B"
-										   id="smoke_y">
-									<label for="smoke_y" class="btn btn-outline-success">是</label>
+										   id="smoke_2">
+									<label for="smoke_2" class="btn btn-outline-success">每天半包</label>
+								</div>
+								<div class="radiowrapper">
+									<input type="radio" name="q6" value="30" data-product="產品B"
+										   id="smoke_3">
+									<label for="smoke_3" class="btn btn-outline-success">每周1-2包</label>
 								</div>
 								<div class="radiowrapper">
 									<input type="radio" name="q6" value="1" data-product="產品C"
-										   id="smoke_n">
-									<label for="smoke_n" class="btn btn-outline-success">沒有</label>
+										   id="smoke_4">
+									<label for="smoke_4" class="btn btn-outline-success">幾乎不抽菸或沒有抽菸習慣</label>
 								</div>
 							</div>
 						</fieldset>
@@ -237,7 +265,7 @@
 					<div class="input-wrapper with-icon">
 						<fieldset class="p-3">
 							<legend>
-								<i class="fas fa-heart" aria-hidden="true"></i>您每星期平均幾進行2節以上的運動？<abbr class="required" title="required">*</abbr>
+								<i class="fas fa-heart" aria-hidden="true"></i>您每星期平均進行2節以上的運動？<abbr class="required" title="required">*</abbr>
 							</legend>
 							<strong>一節為30分鐘</strong>
 							<div class="answer mt-3">
@@ -280,11 +308,12 @@
 			</section>
 			<!-- 問卷區域-進階 -->
 			<section>
+				<h2>身體狀況</h2>
 				<div class="form-field form-radio required">
 					<div class="input-wrapper with-icon">
 						<fieldset class="p-3">
 							<legend>
-								<i class="fas fa-heart" aria-hidden="true"></i>您經常性會出現嘴破的問題嗎？<abbr class="required" title="required">*</abbr>
+								<i class="fas fa-heart" aria-hidden="true"></i>您經常性會有吃東西會刷牙時流血的狀況嗎？<abbr class="required" title="required">*</abbr>
 							</legend>
 							<strong>每個月1-2次</strong>
 							<div class="answer mt-3">
@@ -348,10 +377,10 @@
 					<div class="input-wrapper with-icon">
 						<fieldset class="p-3">
 							<legend>
-								<i class="fas fa-heart" aria-hidden="true"></i>您有以下狀況嗎？請選擇所有適用選項<abbr class="required"
-																	 title="required">*</abbr>
+								<i class="fas fa-heart" aria-hidden="true"></i>您有以下狀況嗎？<abbr class="required"title="required">*</abbr>
 							</legend>
-							<div class="answer">
+							<strong>這是複選，請選擇所有適用選項，若皆無請選擇沒有</strong>
+							<div class="answer mt-3">
 								<div class="checkboxwrapper">
 									<input type="checkbox" name="q12" value="50"
 										   data-product="產品鈣" id="bone_1">
@@ -395,16 +424,16 @@
 					<div class="input-wrapper with-icon">
 						<fieldset class="p-3">
 							<legend>
-								<i class="fas fa-heart" aria-hidden="true"></i>您有排便不順、消化不良的腸胃問題嗎？<abbr class="required" title="required">*</abbr>
+								<i class="fas fa-heart" aria-hidden="true"></i>您的腸胃排便順暢、消化良好嗎？<abbr class="required" title="required">*</abbr>
 							</legend>
 							<div class="answer">
 								<div class="radiowrapper">
-									<input type="radio" name="q13" value="150"
-										   data-product="產品益生菌" id="bad_digestion_y">
+									<input type="radio" name="q13" value="1"
+										   data-product="產品C" id="bad_digestion_y">
 									<label for="bad_digestion_y" class="btn btn-outline-success">是</label>
 								</div>
 								<div class="radiowrapper">
-									<input type="radio" name="q13" value="1" data-product="產品C"
+									<input type="radio" name="q13" value="150" data-product="產品益生菌"
 										   id="bad_digestion_n">
 									<label for="bad_digestion_n" class="btn btn-outline-success">沒有</label>
 								</div>
@@ -416,8 +445,7 @@
 					<div class="input-wrapper with-icon">
 						<fieldset class="p-3">
 							<legend>
-								<i class="fas fa-heart" aria-hidden="true"></i>您每天約排便一次？<abbr class="required"
-																	  title="required">*</abbr>
+								<i class="fas fa-heart" aria-hidden="true"></i>您每天約排便一次？<abbr class="required" title="required">*</abbr>
 							</legend>
 							<div class="answer">
 								<div class="radiowrapper">
@@ -437,29 +465,44 @@
 					<div class="input-wrapper with-icon">
 						<fieldset class="p-3">
 							<legend>
-								<i class="fas fa-heart" aria-hidden="true"></i>您有以下問題嗎？請選擇所有適用選項<abbr class="required"
-																	 title="required">*</abbr>
+								<i class="fas fa-heart" aria-hidden="true"></i>您有以下問題嗎？<abbr class="required" title="required">*</abbr>
 							</legend>
-							<div class="answer">
+							<strong>這是複選，請選擇所有適用選項，若皆無請選擇沒有</strong>
+							<div class="answer mt-3">
 								<div class="checkboxwrapper">
-									<input type="checkbox" name="q15" value="50"
-										   data-product="產品魚油" id="platforms81">
-									<label for="platforms81" class="btn btn-outline-success">高血壓</label>
+									<input type="checkbox" name="q15" value="100"
+										   data-product="產品紅麴" id="disease_1">
+									<label for="disease_1" class="btn btn-outline-success">低血壓</label>
 								</div>
 								<div class="checkboxwrapper">
-									<input type="checkbox" name="q15" value="50"
-										   data-product="產品紅麴" id="platforms82">
-									<label for="platforms82" class="btn btn-outline-success">三酸甘油脂</label>
+									<input type="checkbox" name="q15" value="100"
+										   data-product="產品魚油" id="disease_2">
+									<label for="disease_2" class="btn btn-outline-success">高血壓</label>
 								</div>
 								<div class="checkboxwrapper">
-									<input type="checkbox" name="q15" value="50"
-										   data-product="產品紅麴" id="platforms83">
-									<label for="platforms83" class="btn btn-outline-success">膽固醇</label>
+									<input type="checkbox" name="q15" value="100"
+										   data-product="產品紅麴" id="disease_3">
+									<label for="disease_3" class="btn btn-outline-success">高血脂</label>
+								</div>
+								<div class="checkboxwrapper">
+									<input type="checkbox" name="q15" value="100"
+										   data-product="產品魚油" id="disease_4">
+									<label for="disease_4" class="btn btn-outline-success">高血糖</label>
+								</div>
+								<div class="checkboxwrapper">
+									<input type="checkbox" name="q15" value="100"
+										   data-product="產品紅麴" id="disease_5">
+									<label for="disease_5" class="btn btn-outline-success">心臟疾病</label>
+								</div>
+								<div class="checkboxwrapper">
+									<input type="checkbox" name="q15" value="100"
+										   data-product="產品紅麴" id="disease_6">
+									<label for="disease_6" class="btn btn-outline-success">貧血</label>
 								</div>
 								<div class="checkboxwrapper">
 									<input type="checkbox" name="q15" value="1"
-										   data-product="產品C" id="platforms80">
-									<label for="platforms80" class="btn btn-outline-success">沒有</label>
+										   data-product="產品C" id="disease_none">
+									<label for="disease_none" class="btn btn-outline-success">沒有</label>
 								</div>
 							</div>
 						</fieldset>
@@ -530,13 +573,9 @@
 					</div>
 				</div>
 			</section>
-			<!-- 推薦產品區域 -->
 			<section>
-				<div id="recommendations"></div>
-			</section>
-			<section>
-				<h2>恭喜完成!按這邊看看你適合補充什麼~</h2>
-				<input class="btn" type="submit" value="分析結果" id="submit">
+				<h3>恭喜完成!按這邊看看你適合補充什麼~</h3>
+				<input class="btn" type="submit" value="分析結果" id="submit" >
 			</section>
 		</div>
 	</form>
