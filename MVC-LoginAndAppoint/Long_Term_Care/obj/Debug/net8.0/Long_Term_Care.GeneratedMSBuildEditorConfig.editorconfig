@@ -26,26 +26,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\長照MVC(帳密與預約)\MVC-LoginAndAppoint\Long_Term_Care
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/長照MVC(帳密與預約)/MVC-LoginAndAppoint/Long_Term_Care/Views/AppointmentForms1/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRGb3JtczFcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/長照MVC(帳密與預約)/MVC-LoginAndAppoint/Long_Term_Care/Views/AppointmentForms1/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRGb3JtczFcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/長照MVC(帳密與預約)/MVC-LoginAndAppoint/Long_Term_Care/Views/AppointmentForms1/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRGb3JtczFcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/長照MVC(帳密與預約)/MVC-LoginAndAppoint/Long_Term_Care/Views/AppointmentForms1/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRGb3JtczFcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/長照MVC(帳密與預約)/MVC-LoginAndAppoint/Long_Term_Care/Views/AppointmentForms1/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRGb3JtczFcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/長照MVC(帳密與預約)/MVC-LoginAndAppoint/Long_Term_Care/Views/AppointmentForms/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRGb3Jtc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

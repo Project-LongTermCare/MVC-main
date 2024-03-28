@@ -498,3 +498,4 @@ C:\Users\apple\OneDrive\桌面\長照MVC(帳密與預約)\MVC-LoginAndAppoint\Lo
 C:\Users\apple\OneDrive\桌面\長照MVC(帳密與預約)\MVC-LoginAndAppoint\Long_Term_Care\obj\Debug\net8.0\Long_Term_Care.pdb
 C:\Users\apple\OneDrive\桌面\長照MVC(帳密與預約)\MVC-LoginAndAppoint\Long_Term_Care\obj\Debug\net8.0\Long_Term_Care.genruntimeconfig.cache
 C:\Users\apple\OneDrive\桌面\長照MVC(帳密與預約)\MVC-LoginAndAppoint\Long_Term_Care\obj\Debug\net8.0\ref\Long_Term_Care.dll
+D:\長照MVC(帳密與預約)\MVC-LoginAndAppoint\Long_Term_Care\obj\Debug\net8.0\Long_Term_Care.sourcelink.json

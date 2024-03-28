@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Long_Term_Care")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e122ae420d62ff3c494dddced27f4e3d477e2a0e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Long_Term_Care")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Long_Term_Care")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
