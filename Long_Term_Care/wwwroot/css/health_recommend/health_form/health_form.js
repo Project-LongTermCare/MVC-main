@@ -61,8 +61,8 @@
         var topThree = sortedProducts.slice(0, 3);// 取前三名產品
         var name = document.getElementById('name').value;// 獲取填寫的名字
 
-        localStorage.setItem('name', JSON.stringify(name));
-        localStorage.setItem('topThree', JSON.stringify(topThree));
+        sessionStorage.setItem('name', JSON.stringify(name));
+        sessionStorage.setItem('topThree', JSON.stringify(topThree));
 
-        document.getElementById('healthForm').submit();// 提交表單
+        //document.getElementById('healthForm').submit();// 提交表單
     })
