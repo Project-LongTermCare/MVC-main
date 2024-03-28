@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // Robot
-// Set  the CSS rules.
+// Robot CSS
 const styleSet = window.WebChat.createStyleSet({
     bubbleBackground: 'rgba(0, 0, 255, .1)',
     bubbleFromUserBackground: 'rgba(0, 255, 0, .1)',
@@ -122,15 +122,14 @@ const styleSet = window.WebChat.createStyleSet({
     backgroundColor: '#FAF8F3'
 });
 
-// After generated, you can modify the CSS rules.
-// Change font family and weight. 
+
 styleSet.textContent = {
     ...styleSet.textContent,
     fontFamily: "'Comic Sans MS', 'Arial', sans-serif",
     fontWeight: 'bold'
 };
 
-// Set the avatar options. 
+
 const avatarOptions = {
     botAvatarImage: 'https://bot-framework.azureedge.net/bot-icons-v1/chat-bot-dev-chuppy_FTwGTkGSq2FLD0B8bc5Zb6IBiW33R1Gq45t1G6EYRM14Lh.png',
     botAvatarInitials: '馨',
@@ -145,16 +144,7 @@ window.WebChat.renderWebChat({
     styleOptions: avatarOptions
 }, document.getElementById('webchat'));
 
-
-
-// function openBot() {
-//     document.getElementById("webchat").style.display = "block";
-//   }
-
-//   function closeBot() {
-//     document.getElementById("webchat").style.display = "none";
-//   }
-
+// Open / Close Robot
 function openBot() {
     var button = document.querySelector('.open_button');
     var chatDiv = document.querySelector('.row_robot');
